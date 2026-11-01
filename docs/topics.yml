@@ -31,3 +31,6 @@
   title: Worked examples
   description: Small entries that show what an entry can contain.
   replaces: [logic, order]
+- id: bell-inequalities
+  title: Bell inequalities
+  description: Bell inequalities, local correlation polytopes and their symmetries.

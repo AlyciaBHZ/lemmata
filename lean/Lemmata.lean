@@ -387,6 +387,10 @@ public import Lemmata.SpanningTreeSymmetricEF.SignedLift
 public import Lemmata.SpanningTreeSymmetricEF.SlackPermutation
 public import Lemmata.SpanningTreeSymmetricEF.TreeModels
 public import Lemmata.SpanningTreeSymmetricEF.UpperLP
+public import Lemmata.SymmetricBellCrossPolytope.Foundation
+public import Lemmata.SymmetricBellCrossPolytope.Main
+public import Lemmata.SymmetricBellCrossPolytope.Statement
+public import Lemmata.SymmetricBellCrossPolytope.Support
 public import Lemmata.TensorRank.Def.Asymptotic
 public import Lemmata.TensorRank.Def.DirectSum
 public import Lemmata.TensorRank.Def.Flattening

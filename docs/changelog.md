@@ -10,6 +10,11 @@ entry shows its own last change and links to the exact commit.
 
 Newest first. Add an item in the same pull request as the change it describes.
 
+## 2026-11-01
+
+- **New entry:** [A three-party Bell polytope that is not a cross-polytope](symmetric-bell-cross-polytope/index.md),
+  giving the $(N,m)=(3,17)$ counterexample with at least nineteen distinct extreme points.
+
 ## 2026-10-27
 
 - **New entry:** [MinRank Lower Bounds for the Cocubic Reed–Muller Covering Radius](cocubic-covering/index.md), reducing cocubic coset-weight lower bounds to affine MinRank and giving bounds of $32$, $32$, and $34$ in $9$, $10$, and $11$ variables.
