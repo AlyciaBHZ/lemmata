@@ -1,0 +1,37 @@
+schema_version: 1
+id: crossing-decomposition
+lean_namespace: Lemmata.FockCircuits
+subject: cs.CC
+topics: [arithmetic-circuits, tensor-rank]
+contributors:
+  - {name: Kirill Khoruzhii, orcid: 0000-0003-4689-3812}
+abstract: >-
+  We construct arithmetic circuits of size $O(n^{5/3})$ for every symmetric noncommutative quartic in $n$ variables over an arbitrary field. This improves the earlier $O(n^{1.96})$ bound in characteristic different from two and the elementary $O(n^2)$ bound in characteristic two. Our proof combines the crossing construction underlying Anthropic's refutation of ETH with rectangular extensions of OpenAI's $\omega\le9/4$ matrix-multiplication bound. The same construction represents $(\sum_{i=1}^n a_i^2)(\sum_{j=1}^n b_j^2)$ as a sum of at most $n^{\sqrt2+o(1)}$ squares of complex bilinear forms.
+ai_use: The Lean formalization was developed with OpenAI Codex.
+pages:
+  - index.md
+exports:
+  - name: Lemmata.FockCircuits.quarticCircuits
+    kind: theorem
+    page: index.md
+    label: thm-crossing-decomposition-quartics
+  - name: Lemmata.FockCircuits.quinticCircuits
+    kind: theorem
+    page: index.md
+    label: cor-crossing-decomposition-quintics
+  - name: Lemmata.FockCircuits.permanentCircuits
+    kind: theorem
+    page: index.md
+    label: cor-crossing-decomposition-permanents
+  - name: Lemmata.FockCircuits.signedFiniteIdentity
+    kind: theorem
+    page: index.md
+    label: thm-crossing-decomposition-finite-identity
+  - name: Lemmata.FockCircuits.integralCrossingDecomposition
+    kind: theorem
+    page: index.md
+    label: lem-crossing-decomposition-integral
+  - name: Lemmata.FockCircuits.hurwitzSquareRootBound
+    kind: theorem
+    page: index.md
+    label: cor-crossing-decomposition-hurwitz

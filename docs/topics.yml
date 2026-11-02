@@ -16,6 +16,9 @@
   title: Tensor rank
   description: Tensors, tensor rank and asymptotic complexity.
   replaces: [multilinear-algebra]
+- id: arithmetic-circuits
+  title: Arithmetic circuits
+  description: Arithmetic circuit complexity and algorithms for polynomial computation.
 - id: reed-muller-codes
   title: Reed–Muller codes
   description: Reed–Muller codes, their weights and covering radii.
