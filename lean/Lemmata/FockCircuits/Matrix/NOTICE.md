@@ -1,0 +1,13 @@
+# Matrix proof provenance
+
+The coefficient-tensor, restriction-semiring, and coefficient-character modules are adapted from [selanavot/matrix-multiplication-all-fields](https://github.com/selanavot/matrix-multiplication-all-fields/tree/08481ef22bca7dc9ffba091083b7c1e81e537220), revision `08481ef22bca7dc9ffba091083b7c1e81e537220`. That development extends OpenAI's [matrix multiplication formalization](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), revision `adc7f1241b42e322a6451854ab7e4b4c146bf78a`, to arbitrary fields. The Apache License 2.0 is retained in [Apache-2.0.txt](Apache-2.0.txt).
+
+The spectral-duality proof is reused through `public import Lemmata.TensorRank.Main`. The `tensorPreorder` adapter instantiates its field-independent `StrassenPreorder` with finite tensors over the chosen scalar field. No fixed-point or convex-separation source is vendored in this package.
+
+`SpectralPower.lean` and `TensorPower.lean` extract actual finite coefficient decompositions from the imported spectral theorem. `CharacterPower.lean` uses the upstream coefficient-character lifting construction to make that consequence available to coefficient-level character estimates.
+
+The adaptation changes module paths and declaration namespaces to `Lemmata.FockCircuits.Matrix`, preserves the selected proof bodies, and omits the square-specific exponent, matrix-class, and complex-topology declarations from the generic foundation. `Foundation/ExactRank.lean` retains only finite exact rank, its witness, and its monotonicity and product properties; `Foundation/Flattening.lean` retains the identity-minor lower bound. `Tensor/Scalar.lean` defines its scalar tensor directly, and `Character/Basic.lean` uses that definition.
+
+The determinant, sector, separation, entropy, and polynomial modules retain the selected characteristic-generic proof closure for the oriented shared-leg inequalities. `Foundation/SeparatedTensorDecomposition.lean` retains only the dependent direct-sum definitions, and `Entropy/ConditionalContinuity.lean` retains only rational-law approximation. `Polynomial/PolynomialApproximation.lean` omits the complex topological border-rank argument. The dot-product and matrix-coefficient modules omit unrelated complex and batching APIs. `Convolution/Rank.lean` chooses interpolation points using an injective sequence of elements of an infinite field.
+
+`Foundation/FieldDescent.lean` adapts the upstream `Arithmetic/FieldDescent.lean` without changing its fixed finite-algebra argument. The profile row, reciprocal weighted bound, and polynomial-division replication modules are new proofs in this entry.

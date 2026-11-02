@@ -10,6 +10,10 @@ entry shows its own last change and links to the exact commit.
 
 Newest first. Add an item in the same pull request as the change it describes.
 
+## 2026-11-02
+
+- **New entry:** [Crossing Decomposition for Subquadratic Noncommutative Circuits](crossing-decomposition/index.md), giving circuits of size $O(n^{5/3})$ for symmetric noncommutative quartics over every field.
+
 ## 2026-10-27
 
 - **New entry:** [MinRank Lower Bounds for the Cocubic Reed–Muller Covering Radius](cocubic-covering/index.md), reducing cocubic coset-weight lower bounds to affine MinRank and giving bounds of $32$, $32$, and $34$ in $9$, $10$, and $11$ variables.
