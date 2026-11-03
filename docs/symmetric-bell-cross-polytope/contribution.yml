@@ -1,0 +1,32 @@
+schema_version: 1
+id: symmetric-bell-cross-polytope
+lean_namespace: Lemmata.SymmetricBellCrossPolytope
+subject: quant-ph
+cross_lists: [math.OC]
+topics: [bell-inequalities]
+abstract: >-
+  The symmetric full-correlation local Bell polytope for three parties and
+  seventeen inputs has at least nineteen distinct extreme points, so it is not
+  affinely equivalent to a nine-dimensional cross-polytope. Eighteen exposed
+  frequency points and a mixed deterministic strategy with an exact separating
+  inequality give a counterexample to the universal cross-polytope conjecture
+  of Designolle, Vértesi and Pokutta.
+contributors:
+  - {name: Haobo Ma, orcid: 0009-0008-4944-977X}
+  - {name: Wenlin Zhang, orcid: 0009-0005-2414-7968}
+ai_use: >-
+  Haobo Ma and Wenlin Zhang used AI tools, namely ChatGPT Pro (GPT-6 Pro), Codex (gpt-6.1-sol) and Claude Opus 5.5 (via Claude Code), for literature search, computation and double-checking, including formal verification of the results in Lean. All proofs can be checked by hand, and the computations can be reproduced from the verification package. H. Ma and W. Zhang take full responsibility for their contributions.
+acknowledgements: >-
+  Author affiliations: Haobo Ma — ChronoAI Pte Ltd; Wenlin Zhang — National University of Singapore; ChronoAI Pte Ltd.
+license: Apache-2.0
+pages:
+  - index.md
+exports:
+  - name: Lemmata.SymmetricBellCrossPolytope.nineteen_extreme
+    kind: theorem
+    page: index.md
+    label: thm-symmetric-bell-cross-polytope-extreme
+  - name: Lemmata.SymmetricBellCrossPolytope.not_cross_polytope_3_17
+    kind: theorem
+    page: index.md
+    label: thm-symmetric-bell-cross-polytope

@@ -122,7 +122,7 @@ ai_use: >-                   # optional: how AI tools were used (end of the page
   ...
 acknowledgements: >-         # optional: funding, thanks (end of the page); $math$ allowed
   ...
-license: CC-BY-4.0           # optional: CC-BY-4.0 (default), CC-BY-SA-4.0 or CC0-1.0
+license: CC-BY-4.0           # optional: CC-BY-4.0 (default), CC-BY-SA-4.0, CC0-1.0 or Apache-2.0
 withdrawn: >-                # only to withdraw a published entry: the reason
   ...
 related:                     # optional: slides, videos, a monograph, code, ... (end of page)
@@ -154,8 +154,11 @@ Rules the tools enforce for these fields:
   someone. The iD's format and check digit are validated. Get yours at
   [orcid.org](https://orcid.org) if you do not have one.
 - `license` covers the whole entry, prose and Lean. Without it the entry is **CC BY 4.0**;
-  the only other choices are `CC-BY-SA-4.0` and `CC0-1.0`. It is shown under the title.
-  Only contribute what you may license this way.
+  the other choices are `CC-BY-SA-4.0`, `CC0-1.0` and `Apache-2.0`. It is shown under the
+  title. For Apache-licensed adaptations, retain upstream license and attribution notices,
+  include the license text (e.g. `docs/<id>/LICENSE.txt`), and identify changes in modified
+  source files. Link the license and any notices from the prose. Only contribute what you
+  may license this way.
 - `withdrawn` (inline text, the reason) withdraws a published entry. Published entries are
   never deleted: they stay at their identifier with a notice and are still built and
   checked, since others cite them and other entries may build on their Lean. They are no

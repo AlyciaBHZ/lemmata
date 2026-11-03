@@ -183,6 +183,53 @@ expect("an unknown topic", (d) => setField(d, /^topics: .*$/m, "topics: [no-such
 expect("the old category field", (d) => append(d, mf, "category: logic\n"), { match: /category\/tags were replaced/ });
 expect("positive control: subject with cross-lists and topics", (d) => setField(d, /^subject: .*$/m, "subject: math.LO\ncross_lists: [cs.LO]"), { refused: false });
 
+// Licenses: Apache-2.0 is an explicit opt-in; the default and existing CC choices stay
+// unchanged. Exercise validation, both generated page labels, and the machine-readable
+// index without compiling Lean or manufacturing a successful verification report.
+function licenseCase(license, expected, name, url) {
+  const dir = copy(), label = license ?? "default (omitted)";
+  try {
+    if (license) append(dir, mf, `license: ${license}\n`);
+    const v = validate(dir);
+    const ident = "2611.00013";
+    fs.mkdirSync(path.join(dir, ".lemmata"), { recursive: true });
+    fs.writeFileSync(path.join(dir, ".lemmata/identifiers.json"), JSON.stringify({ entries: { [entry]: ident } }));
+    const report = path.join(dir, "report.json");
+    fs.writeFileSync(report, "null\n");              // preview, not a verification result
+    const env = { ...process.env, LEMMATA_ROOT: dir, LEMMATA_BUILD: "1" };
+    const run = (...a) => spawnSync(process.execPath, [TOOL, ...a], { env, encoding: "utf8" });
+    const p = run("prepare", "--preview");
+    fs.mkdirSync(path.join(dir, "si"));
+    const si = run("site-index", report, path.join(dir, "si"));
+    const text = (f) => fs.existsSync(path.join(dir, f)) ? fs.readFileSync(path.join(dir, f), "utf8") : "";
+    const panel = text(`docs/_generated/verification/${entry}.md`);
+    const landing = text(`docs/abs/${ident.replace(".", "-")}/index.md`);
+    const index = JSON.parse(text("si/lemmata.json") || "null");
+    const item = index?.entries.find((e) => e.exports.some((x) => x.name.startsWith("Lemmata.ImplicationComposition.")));
+    const line = `License: [${name}](${url})`;
+    const checks = [
+      ["validation accepts it", v.ok],
+      ["prepare and site-index succeed", p.status === 0 && si.status === 0],
+      ["entry has the correct license label and URL", panel.includes(line)],
+      ["abstract page has the correct license label and URL", landing.includes(line)],
+      ["lemmata.json has the correct SPDX id and URL", item?.license === expected && item.license_url === url],
+      ["llms.txt lists Apache 2.0 as an alternative", text("si/llms.txt").includes("CC BY-SA 4.0, CC0 1.0 or Apache 2.0")],
+    ];
+    for (const [what, ok] of checks) { console.log(`${ok ? "ok  " : "FAIL"} license ${label}: ${what}`); if (!ok) failed++; }
+    if (!v.ok || p.status !== 0 || si.status !== 0)
+      console.log("     " + (v.out + "\n" + p.stderr + si.stderr).trim().split("\n").slice(0, 3).join("\n     "));
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+}
+for (const [license, name, url] of [
+  ["CC-BY-4.0", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"],
+  ["CC-BY-SA-4.0", "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"],
+  ["CC0-1.0", "CC0 1.0", "https://creativecommons.org/publicdomain/zero/1.0/"],
+  ["Apache-2.0", "Apache 2.0", "https://www.apache.org/licenses/LICENSE-2.0"],
+]) licenseCase(license, license, name, url);
+licenseCase(undefined, "CC-BY-4.0", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/");
+for (const license of ["MIT", "constructor"])
+  expect(`unsupported license '${license}' is refused`, (d) => append(d, mf, `license: ${license}\n`), { match: /license must be one of/ });
+
 // Frozen entries keep what their last check recorded, computations included (review,
 // 2026-10-26: a frozen computation-backed result was shown as plainly kernel-checked, its
 // claims dropped and llms.txt without the caveat). A frozen record of the shape

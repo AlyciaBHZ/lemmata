@@ -1,0 +1,28 @@
+A three-party Bell polytope that is not a cross-polytope
+Lemmata adaptation of the Trureturing formalization
+
+Upstream project: Trureturing, The Omega Institute
+https://github.com/the-omega-institute/trureturing
+Upstream revision: 1e631ab8fffbd5c0de0523af53fc3ecdea3d4a75
+
+Copyright 2026 The Omega Institute
+
+The Lean formalization is adapted from these files at that revision:
+- D5/S3/Quantum/Entanglement/SymmetricBellPolytopeNotCrossPolytope.lean
+- D5/S3/Quantum/Entanglement/SymmetricBellPolytopeSupport.lean
+Small helper definitions and proofs in Foundation.lean were extracted from
+modules in the same upstream repository.
+
+The upstream Apache License, Version 2.0, is reproduced in LICENSE.txt.
+The license, attribution and this modification notice accompany the adapted code.
+
+Lemmata adaptation:
+Copyright (c) 2026 Haobo Ma and Wenlin Zhang.
+
+Changes from upstream: extracted self-contained helpers; split the formalization
+into Foundation, Statement, Support and Main; renamed namespaces; ported imports
+to the pinned Mathlib; and separated the concrete Counterexample proposition
+and its proof from the refutation of the universal claim.
+
+This notice records provenance and modifications; it does not alter the terms
+of the Apache License, Version 2.0.

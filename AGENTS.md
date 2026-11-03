@@ -318,7 +318,7 @@ ai_use: >-                            # optional; shown at the end of the entry
   Lean proofs drafted with an AI assistant, reviewed and completed by the authors.
 acknowledgements: >-                  # optional; shown at the end of the entry
   Supported by the Berlin Mathematics Research Center MATH$^+$.
-license: CC-BY-4.0                    # optional; CC-BY-4.0 (default), CC-BY-SA-4.0 or CC0-1.0
+license: CC-BY-4.0                    # optional; CC-BY-4.0 (default), CC-BY-SA-4.0, CC0-1.0 or Apache-2.0
 withdrawn: >-                         # only to withdraw a published entry; the reason
   The bound in the second theorem is wrong; see lemmata:2611.00004 for the correction.
 related:                              # optional; derived material, listed at the end
@@ -352,10 +352,13 @@ look one up and assume it belongs to them. Without the field, the names come fro
 carry no ORCID.
 
 `license` is the licence of the whole entry, prose and Lean, shown under the title and in
-`lemmata.json`. Leave it out for **CC BY 4.0**, the default; `CC-BY-SA-4.0` and `CC0-1.0`
-are the only alternatives, and anything else fails validation. Do not contribute text or
-code you cannot license this way, e.g. passages copied from a paper whose publisher holds
-the copyright; ask the human you work for when unsure.
+`lemmata.json`. Leave it out for **CC BY 4.0**, the default; `CC-BY-SA-4.0`, `CC0-1.0`
+and `Apache-2.0` are the only alternatives, and anything else fails validation. When
+adapting Apache-licensed material, retain the upstream license and attribution notices,
+include a copy of the license (e.g. `docs/<id>/LICENSE.txt`), and identify your changes in
+the modified source files. Link the license and any notices from the entry's prose. Do not
+contribute text or code you cannot license this way, e.g. passages copied from a paper
+whose publisher holds the copyright; ask the human you work for when unsure.
 
 `withdrawn` withdraws a published entry; its text is the reason. **Never delete a published
 entry**: its identifier is cited, and other entries may import its Lean. A withdrawn entry

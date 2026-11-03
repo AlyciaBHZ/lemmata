@@ -12,7 +12,13 @@ Newest first. Add an item in the same pull request as the change it describes.
 
 ## 2026-11-02
 
+- **Licensing:** Entries may use Apache 2.0, so adapted formalizations can retain their upstream licensing.
 - **New entry:** [Crossing Decomposition for Subquadratic Noncommutative Circuits](crossing-decomposition/index.md), giving circuits of size $O(n^{5/3})$ for symmetric noncommutative quartics over every field.
+
+## 2026-11-01
+
+- **New entry:** [A three-party Bell polytope that is not a cross-polytope](symmetric-bell-cross-polytope/index.md),
+  giving the $(N,m)=(3,17)$ counterexample with at least nineteen distinct extreme points.
 
 ## 2026-10-27
 

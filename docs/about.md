@@ -24,10 +24,11 @@ By default an entry, prose and Lean alike, is published under the
 [Creative Commons Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 A contribution may specify another license, as long as it is compatible with the aim of the
 repository: entries must remain freely readable, reusable and buildable upon. Currently
-accepted besides the default are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-and [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Each entry shows its
-license under its title. Please contribute only material you have the right to license in
-this way.
+accepted besides the default are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/),
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and
+[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0). Each entry shows its license
+under its title. Adaptations must retain the applicable upstream license and attribution
+notices. Please contribute only material you have the right to license in this way.
 
 ## Removal of contributions
 

@@ -81,6 +81,7 @@ const LICENSES = {
   "CC-BY-4.0": { name: "CC BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/" },
   "CC-BY-SA-4.0": { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "CC0-1.0": { name: "CC0 1.0", url: "https://creativecommons.org/publicdomain/zero/1.0/" },
+  "Apache-2.0": { name: "Apache 2.0", url: "https://www.apache.org/licenses/LICENSE-2.0" },
 };
 const DEFAULT_LICENSE = "CC-BY-4.0";
 // Free-text notes rendered at the bottom of an entry. Inline MyST only: text, emphasis,
@@ -1603,7 +1604,7 @@ function siteIndex(manifests, tax, report, outDir, { commit, sourceUrl }) {
     `Each entry has an identifier lemmata:YYMM.NNNNN, a landing page ${siteUrl}/abs/YYMM.NNNNN (abstract, status, BibTeX) ` +
     `and the full entry at ${siteUrl}/html/YYMM.NNNNN. Cite the /abs/ URL. Machine-readable index with exported Lean ` +
     `declarations, axioms, licence and BibTeX: ${siteUrl}/lemmata.json. Entries are licensed CC BY 4.0 unless the ` +
-    "entry says otherwise (CC BY-SA 4.0 or CC0 1.0).", ""];
+    "entry says otherwise (CC BY-SA 4.0, CC0 1.0 or Apache 2.0).", ""];
   // By primary subject, most entries first, as on the start page.
   const order = Object.keys(tax.subjects), n = (id) => entries.filter((e) => e.subject === id && e.status !== "withdrawn").length;
   for (const id of order.filter(n).sort((a, b) => n(b) - n(a) || order.indexOf(a) - order.indexOf(b))) {
